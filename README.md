@@ -34,7 +34,7 @@ python 환경변수 및 가상환경 설정
 
 예제코드 테스트
 
-    python -m streamlit run main.py
+    python -m streamlit run app.py
 
 python 가상환경 deactivate
 
