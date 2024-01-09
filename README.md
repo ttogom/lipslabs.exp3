@@ -1,8 +1,7 @@
 
 # Quiz
 This program is to get an experiment with openai and streamlit in python.\
-The program takes multiple pdf files and generates 5 multiple-choice questions for user to solve as well as showing the result of quiz.\
-It should effectively serve as a reinforcement learning tool especially right before the exams.
+The program takes multiple pdf files and generates 5 multiple-choice questions for user to solve as well as showing the result of quiz. It should effectively serve as a reinforcement learning tool especially right before the exams.
 
 To navigate to the customized implementation, direct yourself to `dev-sumin`.
 > `main` contains the reference code
