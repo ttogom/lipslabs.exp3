@@ -10,7 +10,7 @@ To navigate to the customized implementation, direct yourself to `dev-sumin`.
 ## How to execute
 Download source code
 
-    git clone https://github.com/evadelzz1/experiment3.git
+    git clone https://github.com/ttogom/lipslabs.exp3.git
 
 Setup virtual environment and setup python env variables
 
