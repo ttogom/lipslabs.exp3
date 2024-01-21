@@ -1,11 +1,13 @@
 
 # Quiz
-
-소스코드 다운로드
+This program is to get an experiment with openai and streamlit in python.\
+The program takes multiple pdf files and generates 5 multiple-choice questions for user to solve as well as showing the result of quiz.\
+It should effectively serve as a reinforcement learning tool especially right before the exams.
+Download source code
 
     git clone https://github.com/evadelzz1/experiment3.git
 
-python 환경변수 및 가상환경 설정
+Setup virtual environment and setup python env variables
 
     cd ./experiment3
 
@@ -28,14 +30,14 @@ python 환경변수 및 가상환경 설정
 
     python -V
 
-프로젝트에 필요한 라이브러리 설치
+Download the libraries from requirements.txt
 
     pip install -r requirements.txt
 
-예제코드 테스트
+Execute the program
 
     python -m streamlit run app.py
 
-python 가상환경 deactivate
+Deactivate venv
 
     deactivate
