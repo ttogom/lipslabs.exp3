@@ -3,14 +3,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langchain.chains import LLMChain
 
-def get_quiz_data(raw_txt, OPENAI_API_KEY) -> str:
-    """
-    This function takes a text of document and an api key to formulate the quiz data
-    using openai prompt.
-    Argument(s) : str, str
-    Return type : str
-    """
 
+def get_quiz_data(text, openai_api_key):
     template = f"""
     You are a helpful assistant programmed to generate questions based on any text provided. For every chunk of text you receive, you're tasked with designing 5 distinct questions. Each of these questions will be accompanied by 3 possible answers: one correct answer and two incorrect ones. 
 
@@ -35,7 +29,6 @@ def get_quiz_data(raw_txt, OPENAI_API_KEY) -> str:
     It is crucial that you adhere to this format as it's optimized for further Python processing.
 
     """
-
     try:
         system_message_prompt = SystemMessagePromptTemplate.from_template(template)
         human_message_prompt = HumanMessagePromptTemplate.from_template("{text}")
@@ -43,10 +36,10 @@ def get_quiz_data(raw_txt, OPENAI_API_KEY) -> str:
             [system_message_prompt, human_message_prompt]
         )
         chain = LLMChain(
-            llm=ChatOpenAI(openai_api_key=OPENAI_API_KEY),
+            llm=ChatOpenAI(openai_api_key=openai_api_key),
             prompt=chat_prompt,
         )
-        return chain.invoke(raw_txt)
+        return chain.run(text)
     except Exception as e:
         if "AuthenticationError" in str(e):
             st.error("Incorrect API key provided. Please check and update your API key.")
